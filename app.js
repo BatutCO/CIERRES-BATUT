@@ -59,7 +59,7 @@ function enviar() {
 
   mostrarMensaje("Enviando...", "loading");
 
-  fetch("https://n8n.globalnexoshop.com/webhook/abeb7f0c-228e-429f-8abd-3cf0d21a962d", {
+  fetch("https://n8n.srv914633.hstgr.cloud/webhook/ec772eb8-e5a6-42c4-b036-abc8cc4485ac", {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
   }).then(() => {
     mostrarMensaje("Cierre enviado ✔", "success");
