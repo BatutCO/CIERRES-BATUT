@@ -59,7 +59,7 @@ function enviar() {
 
   mostrarMensaje("Enviando...", "loading");
 
-  fetch("https://n8n.srv914633.hstgr.cloud/webhook/ec772eb8-e5a6-42c4-b036-abc8cc4485ac", {
+  fetch("https://n8n.srv914633.hstgr.cloud/webhook/CierreBatut", {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
   }).then(() => {
     mostrarMensaje("Cierre enviado ✔", "success");
