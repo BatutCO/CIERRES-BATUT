@@ -73,7 +73,7 @@ function verificar() {
 
   document.getElementById("verificacion").innerText = "Verificando…";
 
-  fetch("https://n8n.globalnexoshop.com/webhook/verificar", {
+  fetch("https://n8n.srv914633.hstgr.cloud/webhook/BatutCierre", {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
   })
     .then(r => r.json())
