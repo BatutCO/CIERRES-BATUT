@@ -67,16 +67,75 @@
 <textarea id="comentarios" placeholder="Comentarios"></textarea>
 </div>
 
+Nuevo index:
 <div class="bloque">
-<button onclick="enviar()">Enviar cierre</button>
-<button onclick="verificar()">Verificar</button>
-
-<div id="status"></div>
-<div id="verificacion"></div>
+<h2>Datos Financieros</h2>
+<!-- Campos generales -->
+<div class="stack">
+<input id="efectivo_apertura" type="number" placeholder="Efectivo Apertura">
+<input id="compras_turno" type="number" placeholder="Compras">
+<input id="domicilios_turno" type="number" placeholder="Domicilios">
 </div>
-
+<!-- Encabezado de comparación -->
+<div class="compare-header">
+<div></div>
+<div class="pill">Sistema</div>
+<div class="pill">Real</div>
 </div>
-
-<script src="app.js"></script>
-</body>
-</html>
+<!-- Efectivo -->
+<div class="row-compare">
+<div class="method">Efectivo</div>
+<div class="field">
+<label for="efectivo_sistema">Sistema</label>
+<input id="efectivo_sistema" type="number" placeholder="0">
+</div>
+<div class="field">
+<label for="efectivo_real">Real</label>
+<input id="efectivo_real" type="number" placeholder="0">
+</div>
+</div>
+<!-- Datáfono -->
+<div class="row-compare">
+<div class="method">Datáfono</div>
+<div class="field">
+<label for="datafono_sistema">Sistema</label>
+<input id="datafono_sistema" type="number" placeholder="0">
+</div>
+<div class="field">
+<label for="datafono_real">Real</label>
+<input id="datafono_real" type="number" placeholder="0">
+</div>
+</div>
+<!-- Transferencias -->
+<div class="row-compare">
+<div class="method">Transferencias</div>
+<div class="field">
+<label for="transferencias_sistema">Sistema</label>
+<input id="transferencias_sistema" type="number" placeholder="0">
+</div>
+<div class="field">
+<label for="transferencia_real">Real</label>
+<input id="transferencia_real" type="number" placeholder="0">
+</div>
+</div>
+<!-- Rappi -->
+<div class="row-compare">
+<div class="method">Rappi</div>
+<div class="field">
+<label for="rappi_sistema">Sistema</label>
+<input id="rappi_sistema" type="number" placeholder="0">
+</div>
+<div class="field">
+<label for="rappi_real">Real</label>
+<input id="rappi_real" type="number" placeholder="0">
+</div>
+</div>
+<!-- Otros campos -->
+<div class="stack">
+<input id="bolsa" type="number" placeholder="Bolsa">
+<input id="caja" type="number" placeholder="Caja">
+<input id="meta" type="number" placeholder="Meta">
+<textarea id="comentarios" placeholder="Comentarios"></textarea>
+</div>
+</div>
+ 
