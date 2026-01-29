@@ -96,3 +96,49 @@ function verificar() {
       document.getElementById("verificacion").innerHTML = html;
     });
 }
+/* =========================
+  Diferencias Sistema vs Real
+========================= */
+(function () {
+ const pares = [
+   { sistema: "efectivo_sistema", real: "efectivo_real", diff: "diff_efectivo" },
+   { sistema: "datafono_sistema", real: "datafono_real", diff: "diff_datafono" },
+   { sistema: "transferencias_sistema", real: "transferencia_real", diff: "diff_transferencias" },
+   { sistema: "rappi_sistema", real: "rappi_real", diff: "diff_rappi" },
+ ];
+ function toNumber(v) {
+   if (v === "" || v === null || v === undefined) return 0;
+   return Number(v) || 0;
+ }
+ function formatoCOP(n) {
+   return n.toLocaleString("es-CO", {
+     style: "currency",
+     currency: "COP",
+     maximumFractionDigits: 0
+   });
+ }
+ function actualizarDiferencia(par) {
+   const s = document.getElementById(par.sistema);
+   const r = document.getElementById(par.real);
+   const d = document.getElementById(par.diff);
+   if (!s || !r || !d) return;
+   const sistema = toNumber(s.value);
+   const real = toNumber(r.value);
+   const diferencia = real - sistema;
+   d.textContent = formatoCOP(diferencia);
+   d.classList.remove("positive", "negative", "zero");
+   if (diferencia > 0) d.classList.add("positive");
+   else if (diferencia < 0) d.classList.add("negative");
+   else d.classList.add("zero");
+ }
+ function iniciar() {
+   pares.forEach(par => {
+     const s = document.getElementById(par.sistema);
+     const r = document.getElementById(par.real);
+     if (s) s.addEventListener("input", () => actualizarDiferencia(par));
+     if (r) r.addEventListener("input", () => actualizarDiferencia(par));
+     actualizarDiferencia(par);
+   });
+ }
+ document.addEventListener("DOMContentLoaded", iniciar);
+})();
